@@ -1,0 +1,147 @@
+{
+  "name": "project-agent",
+  "description": "Project agent with steering files auto-loaded as context, plus AWS architecture and development tools.",
+  "mcpServers": {
+    "fetch": {
+      "command": "uvx",
+      "args": ["mcp-server-fetch"]
+    },
+    "awslabs.syntheticdata-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.syntheticdata-mcp-server"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "AWS_REGION": "us-east-1"
+      },
+      "autoApprove": [],
+      "disabled": false
+    },
+    "awslabs.frontend-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.frontend-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.code-doc-gen-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.code-doc-gen-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.aws-pricing-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-pricing-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "your-aws-profile",
+        "AWS_REGION": "us-east-1"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.aws-diagram-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-diagram-mcp-server"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "autoApprove": [],
+      "disabled": false
+    },
+    "aws-knowledge-mcp-server": {
+      "command": "uvx",
+      "args": ["fastmcp", "run", "https://knowledge-mcp.global.api.aws"]
+    },
+    "awslabs.aws-api-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-api-mcp-server@latest"],
+      "env": {
+        "AWS_REGION": "us-east-1",
+        "EXPERIMENTAL_AGENT_SCRIPTS": "true"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.aws-documentation-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-documentation-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_DOCUMENTATION_PARTITION": "aws"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "aws-outlook-mcp": {
+      "command": "aws-outlook-mcp",
+      "disabled": false
+    },
+    "aws-mcp": {
+      "command": "uvx",
+      "args": ["mcp-proxy-for-aws@latest", "https://aws-mcp.us-east-1.api.aws/mcp"]
+    },
+    "aws-sentral-mcp": {
+      "command": "aws-sentral-mcp",
+      "disabled": false
+    },
+    "builder-mcp": {
+      "command": "builder-mcp",
+      "args": []
+    }
+  },
+  "tools": [
+    "fs_read",
+    "fs_write",
+    "execute_bash",
+    "use_aws",
+    "@awslabs.core-mcp-server/*",
+    "@awslabs.aws-documentation-mcp-server/*",
+    "@well-architected-security-mcp-server/*",
+    "@awslabs.syntheticdata-mcp-server/*",
+    "@awslabs.nova-canvas-mcp-server/*",
+    "@awslabs.frontend-mcp-server/*",
+    "@awslabs.code-doc-gen-mcp-server/*",
+    "@awslabs.aws-pricing-mcp-server/*",
+    "@awslabs.aws-diagram-mcp-server/*",
+    "@aws-knowledge-mcp-server/*",
+    "@awslabs.aws-api-mcp-server/*",
+    "@fetch/*",
+    "@aws-outlook-mcp/*",
+    "@aws-sentral-mcp/*",
+    "@builder-mcp/*"
+  ],
+  "allowedTools": [
+    "fs_read",
+    "fs_write",
+    "execute_bash",
+    "use_aws",
+    "@awslabs.core-mcp-server/*",
+    "@awslabs.aws-documentation-mcp-server/*",
+    "@well-architected-security-mcp-server/*",
+    "@awslabs.syntheticdata-mcp-server/*",
+    "@awslabs.nova-canvas-mcp-server/*",
+    "@awslabs.frontend-mcp-server/*",
+    "@awslabs.code-doc-gen-mcp-server/*",
+    "@awslabs.aws-pricing-mcp-server/*",
+    "@awslabs.aws-diagram-mcp-server/*",
+    "@aws-knowledge-mcp-server/*",
+    "@awslabs.aws-api-mcp-server/*",
+    "@fetch/*",
+    "@aws-outlook-mcp/*",
+    "@aws-sentral-mcp/*",
+    "@builder-mcp/*"
+  ],
+  "resources": [
+    "file://.kiro/steering/tenets.md",
+    "file://.kiro/steering/strategy.md",
+    "file://.kiro/steering/standards.md"
+  ],
+  "model": "claude-opus-4.6-1m"
+}
