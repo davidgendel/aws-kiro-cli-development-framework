@@ -79,21 +79,9 @@
       "disabled": false,
       "autoApprove": []
     },
-    "aws-outlook-mcp": {
-      "command": "aws-outlook-mcp",
-      "disabled": false
-    },
     "aws-mcp": {
       "command": "uvx",
       "args": ["mcp-proxy-for-aws@latest", "https://aws-mcp.us-east-1.api.aws/mcp"]
-    },
-    "aws-sentral-mcp": {
-      "command": "aws-sentral-mcp",
-      "disabled": false
-    },
-    "builder-mcp": {
-      "command": "builder-mcp",
-      "args": []
     }
   },
   "tools": [
@@ -112,10 +100,7 @@
     "@awslabs.aws-diagram-mcp-server/*",
     "@aws-knowledge-mcp-server/*",
     "@awslabs.aws-api-mcp-server/*",
-    "@fetch/*",
-    "@aws-outlook-mcp/*",
-    "@aws-sentral-mcp/*",
-    "@builder-mcp/*"
+    "@fetch/*"
   ],
   "allowedTools": [
     "fs_read",
@@ -133,10 +118,7 @@
     "@awslabs.aws-diagram-mcp-server/*",
     "@aws-knowledge-mcp-server/*",
     "@awslabs.aws-api-mcp-server/*",
-    "@fetch/*",
-    "@aws-outlook-mcp/*",
-    "@aws-sentral-mcp/*",
-    "@builder-mcp/*"
+    "@fetch/*"
   ],
   "resources": [
     "file://.kiro/steering/tenets.md",
